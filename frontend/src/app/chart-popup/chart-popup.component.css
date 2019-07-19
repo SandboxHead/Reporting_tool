@@ -1,0 +1,25 @@
+.modal-custom{
+    height : 500px;
+}
+/* Split the screen in half */
+/* Split the screen in half */
+.split-page {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    padding: 20px;
+  }
+  
+  /* Control the left side */
+  .move-left {
+    background-color: #111;
+  }
+  
+  /* Control the right side */
+  .move-right{
+    margin-left: 48%;
+    border-left-style: dashed; 
+    border-left-color: rgb(119, 117, 117);
+    /* background-color: red; */
+  }

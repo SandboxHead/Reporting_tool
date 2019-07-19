@@ -1,0 +1,27 @@
+<div [ngClass] = "[this.locClass]" 
+  (click)="this.setSelected($event);"
+
+  [style.top]=" this.locClass === 'mychart' ? this.data.location.top + 'px' : '28%'"
+  [style.left]=" this.locClass === 'mychart' ? this.data.location.left + 'px' : '25%'"
+  
+
+  cdkDragBoundary=".slide" (cdkDragStarted)="dragnow($event)" (cdkDragEnded)="dropnow($event)" cdkDrag 
+  [cdkDragDisabled]="this.disabled">  
+  <div [ngClass] = "this.selected">
+    <canvas baseChart 
+      [datasets]="this.data.datasets"
+      [labels]="this.data.labels"
+      [options]="this.data.options"
+      [colors]="this.data.colors"
+      [plugins]="this.data.plugins"
+      [legend]="this.data.legend"
+      [chartType]="this.data.chartType"
+      [data]="this.data.data"
+      >
+    </canvas>
+  </div>
+  <button *ngIf="this.locClass === 'mychart' && this.selected === 'selected'" class="btn btn-primary btn-side" (click)="popUp()">
+    <i class="fas fa-pencil-alt"></i>
+  </button>
+
+</div>

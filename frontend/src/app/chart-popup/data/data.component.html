@@ -1,0 +1,42 @@
+<div style="margin: 10px">
+
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+  <input #fileInput name="file" type="file" ngModel
+  value="Browse...">
+  <button>Submit</button>
+  </form>
+</div>
+
+<div style="height: 10%;">
+  <div ngbDropdown class="d-inline-block" style="float: left; margin-right: 10px;">
+    <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{selected}}</button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+      <button ngbDropdownItem (click)="selected = 'Data'">Data</button>
+      <button ngbDropdownItem (click)="selected = 'Label'">Label</button>
+    </div>
+  </div>
+  <button type="button" class="btn btn-outline-danger selected-cols" *ngFor="let coloumn of data.cols; let i=index" (click)='removeData(i)'>
+    {{coloumn}} <i class="fas fa-times"></i>
+  </button>
+  <!-- <div *ngFor="let coloumn of cols; let i=index" class="selected-cols">
+    {{coloumn}}
+  </div> -->
+</div>
+<div class="overflow-auto">
+<div *ngFor="let collection of collections; let i=index">
+    
+    <div type="button" (click)="collapse(i)"
+            [attr.aria-expanded]="!isCollapsed[i]" [attr.aria-controls]="collection">
+      {{collection}}
+    </div>
+  
+    <div id="{{collection}}" [ngbCollapse]="!isCollapsed[i]">
+      <ul>
+        <li *ngIf="coloumns[i].length === 0">Such Empty</li>
+        <li *ngFor="let coloumn of coloumns[i]; let j=index" (click)="updateData(i, j)">
+          {{coloumns[i][j]}}
+        </li>
+      </ul>
+    </div>
+</div>
+</div>

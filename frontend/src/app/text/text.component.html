@@ -1,0 +1,47 @@
+<div *ngIf="this.selected === 'selected'"
+  [style.top]="this.data.location_dummy.top + 'px'"
+  [style.left]="this.data.location_dummy.left + 'px'"
+  [style.width]="this.data.dimension_dummy.width + 'px'"
+  [style.height]="this.data.dimension_dummy.height + 'px'"
+  [ngClass] = "'mychart'"
+  mwlResizable
+  [enableGhostResize]="true"
+  [resizeEdges]="{bottom: true, right: true, top: true, left: true}"
+  [resizeCursorPrecision]="10"
+  (resizeStart)="resizeStart($event)"
+  (resizeEnd)="resizeEnd($event)"
+>
+</div>
+
+<div class="mychart" *ngIf="this.selected !== 'selected'"
+  (click)="this.setSelected($event);"
+  [style.top]="this.data.location.top + 'px'"
+  [style.left]="this.data.location.left + 'px'"
+  [style.width]="this.data.dimension.width + 'px'"
+  [style.height]="this.data.dimension.height + 'px'"
+
+  cdkDrag (cdkDragStarted)="dragnow($event)" (cdkDragEnded)="dropnow($event)"
+  >
+  <div>
+    {{this.data.txt}}
+  </div>
+  
+</div>
+
+<div class="mychart" *ngIf="this.selected === 'selected'"
+(click)="this.setSelected($event);"
+  [style.top]="this.data.location.top + 'px'"
+  [style.left]="this.data.location.left + 'px'"
+>
+  <textarea
+  [(ngModel)]="this.data.txt"
+  [style.width]="this.data.dimension.width + 2 + 'px'"
+  [style.height]="this.data.dimension.height + 2 + 'px'"
+  [ngClass]="this.selected"
+  >
+  </textarea>
+
+  <button class="btn btn-primary btn-side" (click)="delete()">
+    <i class="fas fa-trash-alt"></i>
+  </button>
+</div>

@@ -1,0 +1,56 @@
+<sh-context-menu #menu>
+    <ng-template shContextMenuItem let-data (click)="addSlide($event)">
+        <div>
+            Add Slide Below
+        </div>
+    </ng-template>
+    <ng-template shContextMenuItem let-data (click)="moveDown($event)">
+        <div>
+            Move Down
+        </div>
+    </ng-template>
+    <ng-template shContextMenuItem let-data (click)="moveUp($event)">
+        <div>
+            Move Up
+        </div>
+    </ng-template>
+    <ng-template shContextMenuItem let-data (click)="deleteSlide($event)">
+        <div>
+            <i class="far fa-trash-alt"></i>
+            Delete Slide
+        </div>
+    </ng-template>
+    
+  </sh-context-menu>
+  <sh-context-menu #nestedMenu>
+    <ng-template shContextMenuItem let-data>
+      <div>
+        Add Slide below
+      </div>
+    </ng-template>
+  </sh-context-menu>
+
+<div [shAttachMenu]="menu" [shMenuData]="{index : j}" 
+    *ngFor= "let in of counter(templateService.count); let j = index" 
+    class="slide" (click)="setSelected($event, {index : j})"
+    [style.border-style]="this.templateService.selectedSlide === j ? 'outset' : 'none'">
+    <div *ngFor="let chart of charts; let i = index">
+        <ng-template [ngIf]="chart.slide === j">
+            <app-mychart [selected]="this.selected(i, 'chart')" [data]="chart" [disabled]="false" [locClass]="'mychart'"></app-mychart>                   
+        </ng-template>
+    </div>
+    <div *ngFor="let image of this.imageService.images; let i=index">
+        <ng-template [ngIf]="image.slide === j">
+            <app-image [selected]="this.selected(i, 'image')" [data]="image"></app-image>
+        </ng-template>
+    </div>
+    <div *ngFor="let text of this.textService.texts; let i=index">
+        <ng-template [ngIf]="text.slide === j">
+            <app-text [selected]="this.selected(i, 'text')" [data]="text"></app-text>
+        </ng-template>
+    </div>
+</div>
+
+
+
+

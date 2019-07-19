@@ -1,0 +1,19 @@
+
+<app-layout *ngIf="loggined"></app-layout>
+<!-- <app-navbar *ngIf="loggined === false"></app-navbar> -->
+<!-- <div *ngIf="loggined" class="nonav">
+    <app-sidebar></app-sidebar>
+    <div class="main">
+        <app-mytemplate></app-mytemplate>
+    </div>
+
+    <div class="leftmenu">
+        <button class="btn btn-primary" (click)="addSlide()">Add slide</button>
+    </div>
+</div>
+
+<div *ngIf="loggined === false" class="nonav">
+    <app-upload></app-upload>
+</div> -->
+<router-outlet></router-outlet>
+

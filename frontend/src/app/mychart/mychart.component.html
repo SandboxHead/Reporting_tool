@@ -1,0 +1,50 @@
+<div *ngIf="this.locClass === 'mychart' && this.selected === 'selected'"
+  [style.top]="this.data.location_dummy.top + 'px'"
+  [style.left]="this.data.location_dummy.left + 'px'"
+  [style.width]="this.data.dimension_dummy.width + 'px'"
+  [style.height]="this.data.dimension_dummy.height + 'px'"
+  
+  [style.border-style]="dotted"
+  [ngClass] = "'mychart'"
+  
+  mwlResizable
+  [enableGhostResize]="true"
+  [resizeEdges]="{bottom: true, right: true, top: true, left: true}"
+  [resizeCursorPrecision]="10"
+  (resizeStart)="resizeStart($event)"
+  (resizeEnd)="resizeEnd($event)"
+
+
+></div>
+
+<div [ngClass] = "[this.locClass]" 
+  (click)="this.setSelected($event);"
+
+  [style.top]=" this.locClass === 'mychart' ? this.data.location.top + 'px' : '5%'"
+  [style.left]=" this.locClass === 'mychart' ? this.data.location.left + 'px' : '25%'"
+  [style.width]="this.locClass === 'mychart' ? this.data.dimension.width + 'px' : '35%'"
+  [style.height]="this.locClass === 'mychart' ? this.data.dimension.height + 'px' : '60%'"
+  
+  (cdkDragStarted)="dragnow($event)" (cdkDragEnded)="dropnow($event)" cdkDrag 
+  [cdkDragDisabled]="this.disabled">  
+  <div [ngClass] = "this.selected">
+    <canvas baseChart 
+      [datasets]="this.data.datasets"
+      [labels]="this.data.labels"
+      [options]="this.data.options"
+      [colors]="this.data.colors"
+      [plugins]="this.data.plugins"
+      [legend]="this.data.legend"
+      [chartType]="this.data.chartType"
+      [data]="this.data.data">
+    </canvas>
+  </div>
+  <!-- <div style="width: 20px; height: 20px; background-color: aqua;" cdkDragHandle></div> -->
+  <button *ngIf="this.locClass === 'mychart' && this.selected === 'selected'" class="btn btn-primary btn-side" (click)="popUp()">
+    <i class="fas fa-pencil-alt"></i>
+  </button>
+  <button *ngIf="this.locClass === 'mychart' && this.selected === 'selected'" class="btn btn-primary btn-delete" (click)="delete()">
+      <i class="fas fa-trash-alt"></i>
+  </button>
+
+</div>

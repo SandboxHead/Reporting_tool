@@ -1,0 +1,133 @@
+#myheader{
+    color:#ffffff;
+    background:#003d99;
+    font-size:30px;
+    padding:15px;
+    
+    }
+    
+    .navbar{
+        margin:0px;
+        background-color:#124191;
+        border-radius:0px;
+        padding: 10px;
+    
+    }
+    
+    .nav-content{
+        padding-left: 20px;
+    }
+
+    .bg-body{
+        margin:0px;
+        /* background-image: url('../images/NOKIA_background.jpg'); */
+        background-size: cover;
+        background-repeat: no-repeat; /* for vertical repeat */
+        height:100vh;
+        margin-top:-52px;
+    
+    }
+    
+    #dtmodule{
+        color:white;
+        font-weight:strong;
+        margin-left:20px;
+    }
+    
+    .nav>li>a:focus, .nav>li>a:hover {
+            text-decoration: none;
+            background-color: #112181;
+      }
+    
+    .bottom-left {
+      color:white;
+      position: absolute;
+      top: 25%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    .login-form {
+    
+       padding-bottom:10px;
+      background-color:rgba(41,68, 112, 0.8);
+      color:white;
+      position: absolute;
+      top: 50%;
+      left: 20%;
+      transform: translate(-50%, -50%);
+    }
+    
+    
+    form{
+    margin:10px;
+    padding:15px;
+    }
+    .form-group{
+        margin-bottom:6px;
+    }
+    .ScrollStyle{
+    max-height: 350px;
+    overflow-y: scroll;
+    padding-left:20px;
+    border:2px solid #000000;
+    
+    }
+    .table{
+    margin-left:20px;
+    margin-right:20px;
+    margin-top:10px;
+    margin-bottom:10px;
+    pading:5px;
+    }
+    
+    table.table tr.selected {
+    background-color: #e92929 !important;
+    color:#fff;
+     }
+    
+    .popup-overlay {
+    visibility:hidden;
+    }
+    .ui-widget-overlay {
+    visibility:hidden;
+    }
+    
+    .popup-content {
+    visibility:hidden;
+    }
+    
+    .popup-overlay.active{
+    visibility:visible;
+    }
+    
+    .popup-content.active {
+    visibility:visible;
+    }
+    
+    
+    
+    .modal-body .form-horizontal .col-sm-2,
+    .modal-body .form-horizontal .col-sm-10 {
+        width: 100%
+    }
+    
+    .modal-body .form-horizontal .control-label {
+        text-align: left;
+    }
+    .modal-body .form-horizontal .col-sm-offset-2 {
+        margin-left: 15px;
+    }
+    
+    .alert-success {
+        color: #3c763d;
+        background-color: #dff0d8;
+        border-color: #d6e9c6;
+    }
+    .alert {
+        padding: 8px;
+        margin-bottom: 45px;
+        border: 1px solid transparent;
+        border-radius: 4px
+    
+    }    

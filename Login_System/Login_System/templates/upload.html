@@ -1,0 +1,22 @@
+<h1>Upload Data Files</h1>
+<form action="{{ url_for('upload_data', username='shubham', template='template1') }}" method = "POST"
+enctype = "multipart/form-data">
+    <input type="file" name="file">
+    <input type="submit"/>
+  </form>
+
+
+<h1>Upload Image files</h1>
+  <form action="{{ url_for('upload_image', username='shubham', template='template1') }}" method = "POST"
+enctype = "multipart/form-data">
+    <input type="file" name="file">
+    <input type="submit"/>
+  </form>
+
+  <h1>Upload Text files</h1>
+  <form action="{{ url_for('upload_textfiles', username='shubham', template='template1') }}" method = "POST"
+enctype = "multipart/form-data">
+    <input type="file" name="file">
+    <input type="submit"/>
+  </form>
+

@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-custom fixed-top">
+    <a class="navbar-brand brand-custom" href="#"><img src="../../assets/images/nokia_white_logo.png" alt="logo.png"></a>
+    <ul class="navbar-nav mr-auto">
+      <li ngbDropdown class="nav-item active">
+        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false" ngbDropdownToggle >
+            <i class="fa fa-file" aria-hidden="true"></i>
+            File
+        </a>
+        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" style="float: right" id="navbarSupportedContent" [ngbCollapse]="!isCollapsed">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#"> <i class="fa fa-upload" aria-hidden="true"></i>
+            Save <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#"> <i class="fa fa-download" aria-hidden="true"></i> Download <span class="sr-only">(current)</span></a>
+        </li>
+        <li ngbDropdown class="nav-item">
+          <button class="nav-link btn btn-outline-primary dropdown-toggle active" id="dropdownBasic1" ngbDropdownToggle >
+              <span class="glyphicon glyphicon-asterisk"><i class="fa fa-user-circle fa-4" aria-hidden="true">Account</i>
+              </span>
+          </button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+              <button ngbDropdownItem>Action - 1</button>
+              <button ngbDropdownItem>Another Action</button>
+              <button ngbDropdownItem>Something else is here</button>
+            </div>
+        </li>
+
+      </ul>
+      
+    </div>
+  </nav>

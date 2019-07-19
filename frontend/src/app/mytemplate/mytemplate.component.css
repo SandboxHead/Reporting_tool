@@ -1,0 +1,26 @@
+.slide{
+    width: 100%;
+    padding-bottom: 56.25%;
+    max-width: 100%;
+    background-color: white;
+    position: relative;
+    margin: 10px;
+
+    /* height: 500px; */
+}
+
+.example-boundary {
+    width: 600px;
+    height: 600px;
+    max-width: 100%;
+    /* border: dotted #ccc 2px; */
+  }
+
+  mwlResizable {
+    box-sizing: border-box;
+  }
+
+  .rectangle {
+    background-color: brown; height: 300px; width: 300px; margin: auto; position: relative;
+  }
+

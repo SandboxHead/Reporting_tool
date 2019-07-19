@@ -1,0 +1,79 @@
+<div class="tabset-content">
+  <ngb-tabset justify="center" type='pills'>
+    <ngb-tab title="Common">
+      <ng-template ngbTabContent>
+        <div class="tabset-content">
+            <div class="style-block" style="border-right-style: solid; border-width: thin; border-color: gray">
+              <div class="style-section">
+                <div style="margin-bottom : 10px;">
+                  <div ngbDropdown class="d-inline-block" >
+                    <button class="btn btn-xl btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{axisSelected}}</button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                      <button ngbDropdownItem (click)="axisSelected = 'title'">Title</button>
+                      <button ngbDropdownItem (click)="axisSelected = 'xAxis'">X-axis</button>
+                      <button ngbDropdownItem (click)="axisSelected = 'yAxis'">Y-axis</button>
+                    </div>
+                  </div>
+                  <ui-switch [checked]="checkToggle()" (change)="axisToggle($event)" style="float: right;"></ui-switch>
+                </div>
+                <input style="margin-bottom : 10px; width: 100%;" *ngIf="axisSelected === 'title'" [disabled]="this.data.options.title.display === false" [(ngModel)]="data.options.title.text" placeholder="title"/>
+                <input style="margin-bottom : 10px; width: 100%;" *ngIf="axisSelected === 'xAxis'" [disabled]="this.data.options.scales.xAxes[0].scaleLabel.display === false" [(ngModel)]="this.data.options.scales.xAxes[0].scaleLabel.labelString" placeholder="X Axis"/>
+                <input style="margin-bottom : 10px; width: 100%;" *ngIf="axisSelected === 'yAxis'" [disabled]="this.data.options.scales.yAxes[0].scaleLabel.display === false" [(ngModel)]="this.data.options.scales.yAxes[0].scaleLabel.labelString" placeholder="Y Axis"/>
+                <!-- <ngx-select [items]="items" ></ngx-select> -->
+                <label>Color: </label>
+                <input class="color-pallate" *ngIf="axisSelected === 'title'" [(colorPicker)]="this.data.options.title.fontColor" [style.background]="this.data.options.title.fontColor"/>
+                <input class="color-pallate" *ngIf="axisSelected === 'xAxis'" [(colorPicker)]="this.data.options.scales.xAxes[0].scaleLabel.fontColor" [style.background]="this.data.options.scales.xAxes[0].scaleLabel.fontColor"/>
+                <input class="color-pallate" *ngIf="axisSelected === 'yAxis'" [(colorPicker)]="this.data.options.scales.yAxes[0].scaleLabel.fontColor" [style.background]="this.data.options.scales.yAxes[0].scaleLabel.fontColor"/>
+
+              </div>
+              <div class="style-section">
+                <div style="margin-bottom: 10px;">
+                  <label>Legend</label>
+                  <ui-switch [checked]="data.legend" (change)="data.legend = $event" style="float: right;"></ui-switch>
+                </div>
+                <div style="margin-bottom: 10px;">
+                  <label>Position: </label>
+                  <div ngbDropdown class="d-inline-block" style="float: right">
+                    <button class="btn btn-xl btn-outline-primary" id="dropdownBasic2" ngbDropdownToggle>{{this.data.options.legend.position}}</button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+                      <button ngbDropdownItem (click)="this.data.options.legend.position = 'top'">Top</button>
+                      <button ngbDropdownItem (click)="this.data.options.legend.position = 'bottom'">Bottom</button>
+                      <button ngbDropdownItem (click)="this.data.options.legend.position = 'left'">Left</button>
+                      <button ngbDropdownItem (click)="this.data.options.legend.position = 'right'">Right</button>
+                    </div>
+                  </div>
+                </div>
+                <label>Color: </label>
+                <input class="color-pallate" [(colorPicker)]="this.data.options.legend.labels.fontColor" [style.background]="this.data.options.legend.labels.fontColor"/>
+                
+              </div>
+              <div class="style-section">
+                <div style="margin-bottom: 10px;">
+                  <label>Gird Lines</label>
+                  <ui-switch [checked]="this.data.options.scales.yAxes[0].gridLines.display" (change)="this.data.options.scales.yAxes[0].gridLines.display = $event; this.data.options.scales.xAxes[0].gridLines.display = $event" style="float: right;"></ui-switch>
+                </div>
+                
+
+                <label>Color: </label>
+                <input class="color-pallate" [(colorPicker)]="this.data.options.scales.yAxes[0].gridLines.color" (colorPickerChange)="gridColor($event)" [style.background]="this.data.options.scales.yAxes[0].gridLines.color"/>
+                
+              </div>
+              
+            </div>
+            <div class="style-block" >
+              <div class="style-section-right">
+                <div style="margin-bottom: 10px;">
+                  <label>Colors</label>
+                </div>
+              </div>
+            </div>
+        </div>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Specific">
+      <ng-template ngbTabContent>
+        <p>Because default values have been customized.</p>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</div>

@@ -1,0 +1,11 @@
+{
+    "token":"gAAAAABdC0qgcDxitWQhsfgUWAFO1PiZ-IMSnPugmYmkxi2LH2phms_Nnbmc1vc9ie2T5NDYKSPeqCTsnmvvfbW8AhkS-o521w==",
+    "key":"53gV4tTBsK0Vo3hhyvcQA-TPn7MxwZ2BRKdR1L9zxOQ=",
+    "ldap_ip":"ldap://10.130.208.11:389",
+    "userdatabase":"reporting_user",
+    "datadatabase":"reporting_data",
+    "templatedatabase": "reporting_template",
+    "root": "C:/Users/shubham/Desktop/Use Cases With Interns/Login System"
+
+    
+}

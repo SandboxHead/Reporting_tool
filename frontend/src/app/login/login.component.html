@@ -1,0 +1,31 @@
+<div class="bg-body">
+    <div class="login-form">
+        <div class="content-section">
+    <form #f="ngForm" (ngSubmit)="onSubmit()" novalidate>
+
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-3" style="color:white;">Login</legend>
+            <div class="form-group">
+                <label for="username" class="form-control-label">Username</label>
+                <input type="text" class="form-control form-control-lg" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+                <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-control-label">Password</label>
+                <input type="password" class="form-control form-control-lg" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+                <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>                
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="from-check-input" name="remember" [(ngModel)]="model.remember" #remember="ngModel" />
+                <label for="remember" class="form-check-label">Remember me</label>
+            </div>
+        </fieldset>
+
+        <div class="form-group">
+            <button [disabled]="loading" class="btn btn-primary">Login</button>
+        </div>
+    </form>
+    </div>
+</div>
+
+</div>

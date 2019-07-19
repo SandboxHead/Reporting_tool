@@ -1,0 +1,273 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/cdk/overlay-prebuilt.css";
+
+
+.nav-custom {
+    background-color: #124191!important;
+}
+body {
+    background-color: rgb(212, 218, 212);
+}
+
+.modal-lg{
+    max-width: 60%!important;
+}
+
+.mychart {
+    position: absolute; 
+    display: block; 
+}
+
+.slide-selected {
+    border-style: outset;
+}
+
+.popupchart {
+    top: 28%;
+    left: 25%;
+    margin-left: -17.5%;
+    /* margin-top: -50%; */
+    position: absolute;
+    display: block;
+    width: 35%;
+}
+
+.selected{
+    border-style: dotted;
+    border-width: 1px;
+    border-color: black;
+    z-index: 500;
+  }
+
+.btn-side{
+    position: absolute;
+    left: 100%;
+    top: 0%;
+}
+.btn-delete{
+    position : absolute;
+    left: 100%;
+    top: 40px;
+}
+
+.tabset-content {
+    padding-top: 10px;
+    padding-bottom : 10px;
+    height: 88%;
+    width: 100%;
+    position: absolute;
+}
+
+.style-block {
+    height: 100%; 
+    width: 46%; 
+    float: left;
+}
+
+.btn-xl {
+    padding-top: 3px!important;
+    padding-bottom: 3px!important;
+}
+
+.color-pallate{
+    float : right;
+    width: 24px; 
+    height: 24px;
+}
+
+.style-section {
+    padding: 5px;
+    margin-right: 5%;
+    border-bottom-style: solid;
+    border-width: thin;
+    border-color: gray;
+}
+
+.style-section-right {
+    padding: 5px;
+    margin-left: 5%;
+    border-bottom-style: solid;
+    border-width: thin;
+    border-color: gray;
+}
+
+/* .tabset, .tab-content, .tab-pane, .tabbable {
+    height:100%;
+  } */
+
+.selected-cols{
+    margin-left: 2px; 
+    margin-right: 2px;
+    float: left;
+}
+
+#myheader{
+    color:#ffffff;
+    background:#003d99;
+    font-size:30px;
+    padding:15px;
+    
+    }
+    
+    .navbar{
+        margin:0px;
+        background-color:#124191;
+        border-radius:0px;
+    
+    }
+    
+    .bg-body{
+        margin:0px;
+        background-image: url('assets/images/NOKIA_background.jpg');
+        background-size: cover;
+        background-repeat: no-repeat; /* for vertical repeat */
+        height:100vh;
+        /* margin-top:-52px; */
+    
+    }
+    
+    #dtmodule{
+        color:white;
+        font-weight:strong;
+        margin-left:20px;
+    }
+    
+    .nav>li>a:focus, .nav>li>a:hover {
+            text-decoration: none;
+            background-color: #112181;
+      }
+    
+    .bottom-left {
+      color:white;
+      position: absolute;
+      top: 25%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    .login-form {
+    
+       padding-bottom:10px;
+      background-color:rgba(41,68, 112, 0.8);
+      color:white;
+      position: absolute;
+      top: 50%;
+      left: 20%;
+      transform: translate(-50%, -50%);
+    }
+    
+    
+    form{
+    margin:10px;
+    padding:15px;
+    }
+    .form-group{
+        margin-bottom:6px;
+    }
+    .ScrollStyle{
+    max-height: 350px;
+    overflow-y: scroll;
+    padding-left:20px;
+    border:2px solid #000000;
+    
+    }
+    .table{
+    margin-left:20px;
+    margin-right:20px;
+    margin-top:10px;
+    margin-bottom:10px;
+    pading:5px;
+    }
+    
+    table.table tr.selected {
+    background-color: #e92929 !important;
+    color:#fff;
+     }
+    
+    .popup-overlay {
+    visibility:hidden;
+    }
+    .ui-widget-overlay {
+    visibility:hidden;
+    }
+    
+    .popup-content {
+    visibility:hidden;
+    }
+    
+    .popup-overlay.active{
+    visibility:visible;
+    }
+    
+    .popup-content.active {
+    visibility:visible;
+    }
+    
+    
+    
+    .modal-body .form-horizontal .col-sm-2,
+    .modal-body .form-horizontal .col-sm-10 {
+        width: 100%
+    }
+    
+    .modal-body .form-horizontal .control-label {
+        text-align: left;
+    }
+    .modal-body .form-horizontal .col-sm-offset-2 {
+        margin-left: 15px;
+    }
+    
+    .alert-success {
+        color: #3c763d;
+        background-color: #dff0d8;
+        border-color: #d6e9c6;
+    }
+    .alert {
+        padding: 8px;
+        margin-bottom: 45px;
+        border: 1px solid transparent;
+        border-radius: 4px
+    
+    }    
+
+    .menu {
+        margin: 0;
+        padding: 0;
+        width: 15%;
+        background-color: #f1f1f1;
+        position: fixed;
+        height: 100%;
+        overflow: auto;
+      }
+      /* .main {
+        width: 70%;
+        float: left;
+      } */
+    
+      .nonav {
+        margin-top: 70px;
+      }
+    
+      .main {
+        display: block;
+        /* width: 100vw; */
+        /* height: 100vh; */
+        margin-left: 15%;
+        width: 70%;
+        /* background-color: rgb(212, 218, 212); */
+        /* margin: 10; */
+        /* padding: 10; */
+        /* border: 0 none; */
+        box-sizing: border-box;
+        float: left;
+        
+      }
+    
+      .leftmenu {
+          padding-left: 25px;
+          margin-left: 85%;
+          width: 13%;
+          float: left;
+          position: fixed;
+          top: 70px;
+      }

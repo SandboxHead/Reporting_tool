@@ -1,0 +1,13 @@
+<div class="bg-body">
+    <div class="login-form">
+        <div class="content-section">
+            <ul>
+                <li (click)="createTemplate()">Create Template</li>
+                <li *ngFor="let template of mytemplates;" (click)="loadTemplate(template)">
+                  {{template}}
+                </li>
+              </ul>
+        </div>
+    </div>
+  
+</div>

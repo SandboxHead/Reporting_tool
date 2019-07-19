@@ -1,0 +1,37 @@
+
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">{{type}} chart</h4>
+  
+  <button type="button" class="close" aria-label="Close" (click)="modalService.dismiss({type : 'Cross'})">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body modal-custom">
+
+  <app-mychart [selected]="notselected" [data]="data" [disabled]="true" [locClass]="'popupchart'"></app-mychart>
+  <div class="split-page move-right">
+      <ngb-tabset>
+          <ngb-tab title="Data">
+            <ng-template ngbTabContent>
+              <app-data [data]="this.data"></app-data>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab>
+            <ng-template ngbTabTitle>Style</ng-template>
+            <ng-template ngbTabContent>
+              <app-styles [data]="data"></app-styles>
+            </ng-template>
+          </ngb-tab>
+          <!-- <ngb-tab title="Disabled" [disabled]="true">
+            <ng-template ngbTabContent>
+              <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam. Nulla facilisi. Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu, congue et odio. Duis pharetra et nisl at faucibus. Quisque luctus pulvinar arcu, et molestie lectus ultrices et. Sed diam urna, egestas ut ipsum vel, volutpat volutpat neque. Praesent fringilla tortor arcu. Vivamus faucibus nisl enim, nec tristique ipsum euismod facilisis. Morbi ut bibendum est, eu tincidunt odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris aliquet odio ac lorem aliquet ultricies in eget neque. Phasellus nec tortor vel tellus pulvinar feugiat.</p>
+            </ng-template>
+          </ngb-tab> -->
+        </ngb-tabset>
+
+  </div>
+</div>
+<div class="modal-footer" style="z-index: 100">
+  <button type="button" class="btn btn-outline-dark" (click)="modalService.close({type : 'Save', data : this.data})">Save</button>
+</div>
+
