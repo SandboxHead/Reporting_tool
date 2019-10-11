@@ -1,1 +1,3 @@
-Reporting tool to create templates and visulize data
+## Reporting Tool
+
+Reporting tool to create templates and visualize data
